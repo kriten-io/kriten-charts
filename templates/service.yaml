@@ -1,0 +1,18 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "kriten.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "kriten.selectorLabels" . | nindent 8 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "kriten.selectorLabels" . | nindent 4 }}
+    app: {{ include "kriten.fullname" . }}
