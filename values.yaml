@@ -11,8 +11,8 @@ image:
   tag: "v0.3-beta1"
 
 imagePullSecrets: ["name": "dockerhub"]
-name: "kriten"
-namespace: "kriten"
+name: "kriten-community"
+namespace: "kriten-community"
 jobsTTL: 3600
 
 serviceAccount:
@@ -40,20 +40,6 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
-
-ldap:
-  enabled: true
-  # bindUser: "readonly@zentyal-domain.lan"
-  # bindPass: "S3cret!!!"
-  # fqdn: "10.13.37.101"
-  # port: "389"  # 636 for TLS
-  # baseDN: "dc=zentyal-domain,dc=lan"
-  bindUser: "readonly@ad-evolvere.local"
-  bindPass: "S3cret!!!"
-  fqdn: "192.168.10.167"
-  port: "389"  # 636 for TLS
-  baseDN: "dc=ad-evolvere,dc=local"
-  adminGroup: operators
 
 elasticSearch:
   enabled: false
@@ -93,33 +79,6 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
-frontend:
-  enabled: true
-  replicaCount: 1
-  backendAddress: kriten.kriten.192.168.10.102.nip.io
-  image:
-    repository: evolvere/brainiac-frontend
-    tag: "v0.1"
-    pullPolicy: IfNotPresent
-  service:
-    type: ClusterIP
-    port: 80
-  ingress:
-    enabled: true
-    className: "nginx"
-    annotations: {}
-      # kubernetes.io/ingress.class: nginx
-      # kubernetes.io/tls-acme: "true"
-    hosts:
-      - host: kriten-frontend.kriten.192.168.10.102.nip.io
-        paths:
-          - path: /
-            pathType: Prefix
-    tls: []
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
