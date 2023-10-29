@@ -23,7 +23,7 @@
 
 ### Quick start
 
-To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo and run the following Helm command:
+To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo and run the following Helm command against target Kubernetes cluster:
 ```
 $ KRITEN_HOSTNAME=<fqdn or ip to reach ingress>
 $ helm install kriten-community ./kriten-charts -n kriten-community \
@@ -31,11 +31,13 @@ $ helm install kriten-community ./kriten-charts -n kriten-community \
 --create-namespace
 ```
 
-For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples. 
+For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples.
+
+Kriten's documentation can be found at that location: https://github.com/kriten-io/kriten-docs
 
 ### Helm install
 
-The Chart can be installed by cloning the Helm Chart from GitHub: https://github.com/evolvere-tech/kriten-charts
+The Chart can be installed by cloning the Helm Chart from GitHub: https://github.com/kriten-io/kriten-charts
 
 Kriten can be installed with integrated PostgreSQL database (recommended for Dev and UAT environments) or with external PostgreSQL database (recommended for production use).
 
@@ -43,14 +45,14 @@ Kriten supports local authenticator and Microsoft AD authenticator at same time.
 
 Helm install with values.yaml modified for target configuration:
 
-`$ helm install kriten ./kriten-charts -n kriten`
+`$ helm install kriten-community ./kriten-charts -n kriten-community --create-namespace`
 
 
 ### Helm Chart Parameters
 
 |Parameter|Description|Default|
 |---------|-----------|-------|
-|`replicaCount`|Number of desired Kriten Core pods|`1`|
+|`replicaCount`|Number of desired Kriten pods|`1`|
 |`image.repository`|Kriten Docker image repository|`"evolvere/kriten-core"`|
 |`image.tag`|Kriten Docker image tag|`"v0.3-beta4"`|
 |`image.pullPolicy`|Pull policy for Kriten Docker image|`"IfNotPresent"`|
