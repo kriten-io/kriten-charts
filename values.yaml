@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: evolvere/kriten-core
+  repository: evolvere/kriten-community
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.3-beta1"
+  tag: "v0.3-beta2"
 
 imagePullSecrets: ["name": "dockerhub"]
 name: "kriten-community"
