@@ -23,8 +23,10 @@
 ### Quick start
 
 To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo and run the following Helm command:
-
-`helm install kriten-community ./kriten-charts -n kriten-community --set ingress.hostname='kriten.kriten.192.168.10.102.nip.io' --create-namespace`
+```
+$ KRITEN_HOSTNAME=<fqdn or ip to reach ingress>
+$ helm install kriten-community ./kriten-charts -n kriten-community --set ingress.hostname="$KRITEN_HOSTNAME" --create-namespace
+```
 
 For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples. 
 
@@ -38,7 +40,7 @@ Kriten supports local authenticator and Microsoft AD authenticator at same time.
 
 Helm install with values.yaml modified for target configuration:
 
-`helm install kriten ./kriten-charts -n kriten`
+`$ helm install kriten ./kriten-charts -n kriten`
 
 
 ### Helm Chart Parameters
