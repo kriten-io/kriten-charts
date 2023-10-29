@@ -6,6 +6,7 @@
   - [Table of Content](#table-of-content)
   - [Installation](#installation)
     - [Prerequisites and Guidelines](#prerequisites-and-guidelines)
+    - [Quick start](#quick-start)
     - [Helm install](#helm-install)
     - [Helm Chart Parameters](#helm-chart-parameters)
 
@@ -38,7 +39,7 @@ The Chart can be installed by cloning the Helm Chart from GitHub: https://github
 
 Kriten can be installed with integrated PostgreSQL database (recommended for Dev and UAT environments) or with external PostgreSQL database (recommended for production use).
 
-Kriten supports local authenticator and Microsoft AD authenticator at same time. If no Microsoft AD authenticator enabled and configured, only local authentication will take place. Note: **that Microsoft AD integration is not available in Community Edition of Kriten**.
+Kriten supports local authenticator and Microsoft AD authenticator at same time. If no Microsoft AD authenticator enabled and configured, only local authentication will take place. Note: that Microsoft AD integration is not available in Community Edition of Kriten.
 
 Helm install with values.yaml modified for target configuration:
 
