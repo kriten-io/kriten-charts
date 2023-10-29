@@ -78,5 +78,6 @@ Helm install with values.yaml modified for target configuration:
 |`postgresql.auth.database`|PostgreSQL database name|`kriten`
 |`postgresql.persistence.enabled`|PostgreSQL database persistnce storage enabled|`true`
 |`ingress.enabled`|Ingress configuration enabled|`true`
+|`ingress.hostname`|DNS resolvable hostname to reach Ingress for Kriten's service|`""`
 |`ingress.className`|Ingress class name|`"nginx"`
 |`ingress.hosts`|Ingress hosts and paths definitions|`[]`
