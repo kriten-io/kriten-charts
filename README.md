@@ -25,7 +25,9 @@
 To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo and run the following Helm command:
 ```
 $ KRITEN_HOSTNAME=<fqdn or ip to reach ingress>
-$ helm install kriten-community ./kriten-charts -n kriten-community --set ingress.hostname="$KRITEN_HOSTNAME" --create-namespace
+$ helm install kriten-community ./kriten-charts -n kriten-community \
+--set ingress.hostname="$KRITEN_HOSTNAME" \
+--create-namespace
 ```
 
 For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples. 
