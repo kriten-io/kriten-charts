@@ -20,6 +20,14 @@
 - Kubernetes 1.21+
 - Helm v3+
 
+### Quick start
+
+To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo and run the following Helm command:
+
+`helm install kriten-community ./kriten-charts -n kriten-community --set ingress.hostname='kriten.kriten.192.168.10.102.nip.io' --create-namespace`
+
+For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples. 
+
 ### Helm install
 
 The Chart can be installed by cloning the Helm Chart from GitHub: https://github.com/evolvere-tech/kriten-charts
