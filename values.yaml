@@ -53,6 +53,8 @@ jwt:
 
 postgresql:
   install: true
+  host: kriten-community-postgresql
+  port: 5432
   image:
     registry: docker.io
     repository: bitnami/postgresql
