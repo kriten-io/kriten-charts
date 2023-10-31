@@ -23,13 +23,14 @@
 
 ### Quick start
 
-To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo and run the following Helm command against target Kubernetes cluster:
+To install Kriten along with local PostgreSQL and Nginx Ingress, clone this repo and run the following Helm command against target Kubernetes cluster:
 ```
 $ KRITEN_HOSTNAME=<fqdn or ip to reach ingress>
 $ helm install kriten-community ./kriten-charts -n kriten-community \
 --set ingress.hosts[0].host="$KRITEN_HOSTNAME" \
 --create-namespace
 ```
+On successful installation, Swagger documentation will be available on the follwing url: http://$KRITEN_HOSTNAME/swagger.
 
 For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples.
 
@@ -39,7 +40,7 @@ Kriten's documentation can be found at that location: https://github.com/kriten-
 
 The Chart can be installed by cloning the Helm Chart from GitHub: https://github.com/kriten-io/kriten-charts
 
-Kriten can be installed with integrated PostgreSQL database (recommended for Dev and UAT environments) or with external PostgreSQL database (recommended for production use).
+Kriten can be installed along with local PostgreSQL database (recommended for Dev and UAT environments) or with external PostgreSQL database (recommended for production use).
 
 Kriten supports local authenticator and Microsoft AD authenticator at same time. If no Microsoft AD authenticator enabled and configured, only local authentication will take place. Note: that Microsoft AD integration is not available in Community Edition of Kriten.
 
@@ -72,7 +73,7 @@ Helm install with values.yaml modified for target configuration:
 |`ldap.baseDN`|LDAP/AD base DN|`""`
 |`jwt.key`|Private key or secret to sign issued JWT|`"vcwYCYkum_2Fsukk_i"`
 |`jwt.expiry_seconds`|JWT expiry in seconds|`3600`
-|`postgresql.install`|PostgreSQL installed as part of Kriten installation in same k8s cluster if *true*, or use external if *false* |`true`
+|`postgresql.install`|PostgreSQL installed as part of Kriten installation if set to *true*, or use external if *false* |`true`
 |`postgresql.host`|PostgreSQL Host for internal or external depending on *postgresql.install* parameter|`"kriten-community-postgresql"`
 |`postgresql.port`|PostgreSQL TCP port|`5432`
 |`postgresql.image.registry`|PostgreSQL Docker image registry|`docker.io`
