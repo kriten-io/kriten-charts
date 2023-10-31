@@ -30,7 +30,6 @@ $ helm install kriten-community ./kriten-charts -n kriten-community \
 --set ingress.hosts[0].host="$KRITEN_HOSTNAME" \
 --create-namespace
 ```
-On successful installation, Swagger documentation will be available on the follwing url: http://$KRITEN_HOSTNAME/swagger.
 
 For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples.
 
