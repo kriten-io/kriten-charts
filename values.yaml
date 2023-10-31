@@ -8,9 +8,9 @@ image:
   repository: evolvere/kriten-community
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.3-beta2"
+  tag: "0.3"
 
-imagePullSecrets: ["name": "dockerhub"]
+# imagePullSecrets: ["name": "dockerhub"]
 name: "kriten-community"
 namespace: "kriten-community"
 jobsTTL: 3600
