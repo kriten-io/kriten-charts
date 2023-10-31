@@ -27,7 +27,7 @@ To install Kriten with Integrated PostgreSQL and Nginx Ingress clone this repo a
 ```
 $ KRITEN_HOSTNAME=<fqdn or ip to reach ingress>
 $ helm install kriten-community ./kriten-charts -n kriten-community \
---set ingress.hostname="$KRITEN_HOSTNAME" \
+--set ingress.hosts[0].host="$KRITEN_HOSTNAME" \
 --create-namespace
 ```
 
@@ -72,7 +72,9 @@ Helm install with values.yaml modified for target configuration:
 |`ldap.baseDN`|LDAP/AD base DN|`""`
 |`jwt.key`|Private key or secret to sign issued JWT|`"vcwYCYkum_2Fsukk_i"`
 |`jwt.expiry_seconds`|JWT expiry in seconds|`3600`
-|`postgresql.install`|PostgreSQL installed as part of Kriten installation in same k8s cluster|`true`
+|`postgresql.install`|PostgreSQL installed as part of Kriten installation in same k8s cluster if *true*, or use external if *false* |`true`
+|`postgresql.host`|PostgreSQL Host for internal or external depending on *postgresql.install* parameter|`"kriten-community-postgresql"`
+|`postgresql.port`|PostgreSQL TCP port|`5432`
 |`postgresql.image.registry`|PostgreSQL Docker image registry|`docker.io`
 |`postgresql.image.repository`|PostgreSQL Docker image repository|`bitnami/postgresql`
 |`postgresql.image.tag`|PostgreSQL image tag|`"16"`
@@ -81,6 +83,5 @@ Helm install with values.yaml modified for target configuration:
 |`postgresql.auth.database`|PostgreSQL database name|`kriten`
 |`postgresql.persistence.enabled`|PostgreSQL database persistnce storage enabled|`true`
 |`ingress.enabled`|Ingress configuration enabled|`true`
-|`ingress.hostname`|DNS resolvable hostname to reach Ingress for Kriten's service|`""`
 |`ingress.className`|Ingress class name|`"nginx"`
 |`ingress.hosts`|Ingress hosts and paths definitions|`[]`
