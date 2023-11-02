@@ -11,8 +11,8 @@ image:
   tag: "0.3"
 
 # imagePullSecrets: ["name": "dockerhub"]
-name: "kriten-community"
-namespace: "kriten-community"
+name: "kriten"
+namespace: "kriten"
 jobsTTL: 3600
 
 serviceAccount:
@@ -53,7 +53,7 @@ jwt:
 
 postgresql:
   install: true
-  host: kriten-community-postgresql
+  host: kriten-postgresql
   port: 5432
   image:
     registry: docker.io
