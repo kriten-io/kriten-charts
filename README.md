@@ -70,7 +70,7 @@ Helm install with values.yaml modified for target configuration:
 |`ldap.fqdn`|LDAP/AD service IP or FQDN|`""`
 |`ldap.port`|LDAP/AD access TCP port (389 or 639 for TLS)|`389`
 |`ldap.baseDN`|LDAP/AD base DN|`""`
-|`jwt.key`|Private key or secret to sign issued JWT|`"vcwYCYkum_2Fsukk_i"`
+|`jwt.key`|Private key or secret to sign issued JWT|`""`
 |`jwt.expiry_seconds`|JWT expiry in seconds|`3600`
 |`postgresql.install`|PostgreSQL installed as part of Kriten installation if set to *true*, or use external if *false* |`true`
 |`postgresql.host`|PostgreSQL Host for internal or external depending on *postgresql.install* parameter|`"kriten-community-postgresql"`
