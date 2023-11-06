@@ -51,6 +51,17 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
+Only need to provide a hostname if using an external postgres installation.
+*/}}
+{{- define "kriten.dbHost" -}}
+{{- if .Values.postgresql.install }}
+  {{- .Release.Name }}-postgresql
+{{- else }}
+  {{- .Values.postgresql.host }}
+{{- end }}
+{{- end }}
+
+{{/*
 Create the name of the service account to use
 */}}
 {{- define "kriten.serviceAccountName" -}}
