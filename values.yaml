@@ -24,6 +24,8 @@ serviceAccount:
   name: ""
 
 podAnnotations: {}
+  # Annotation advised for forcing a pods refresh on each helm upgrade
+  # rollme: {{ randAlphaNum 5 | quote }}
 
 podSecurityContext: {}
   # fsGroup: 2000
