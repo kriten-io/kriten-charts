@@ -12,7 +12,6 @@ image:
 
 # imagePullSecrets: ["name": "dockerhub"]
 name: "kriten"
-namespace: "kriten"
 jobsTTL: 3600
 
 serviceAccount:
