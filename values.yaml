@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: evolvere/kriten-community
+  repository: evolvere/kriten
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -49,7 +49,7 @@ elasticSearch:
   index: ""
 
 jwt:
-  key: "vcwYCYkum_2Fsukk_i"
+  key: "vcwYCYkum_2Fsukk_i" # create own JWT key instead of default
   expiry_seconds: "3600" # value in seconds, 3600 seconds = 1 hour
 
 postgresql:
@@ -68,7 +68,7 @@ postgresql:
     enabled: true
 
 ingress:
-  enabled: true
+  enabled: false
   className: "nginx"
   annotations: {}
     # kubernetes.io/ingress.class: nginx
