@@ -98,10 +98,12 @@ git clone git@github.com:kriten-io/kriten-charts.git
 cd kriten-charts
 ```
 
-Create the kriten-0.1.0.tgz file:
+Create the kriten-0.1.0.tgz file
+
 ```helm package .```
 
 Create the index.yaml file
+
 ```helm repo index --url https://kriten-io.github.io/kriten-charts/ .```
 
 Move index.yaml and kriten-0.1.0.tgz to the gh-pages branch
