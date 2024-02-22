@@ -91,18 +91,30 @@ Helm install with values.yaml modified for target configuration:
 
 ### Update the Helm repo
 
-Clone this repo.
+Clone this repo
+
+```
+git clone git@github.com:kriten-io/kriten-charts.git
+cd kriten-charts
+```
+
+Create the kriten-0.1.0.tgz file:
+```helm package .```
 
 Create the index.yaml file
 ```helm repo index --url https://kriten-io.github.io/kriten-charts/ .```
 
-Create the kriten-0.1.0.tgz file:
-```helm package kriten-charts```
-
-Copy index.yaml and kriten-0.1.0.tgz to the gh-pages branch
+Move index.yaml and kriten-0.1.0.tgz to the gh-pages branch
 ```
-cd kriten-charts
+mv index.yaml ../
+mv kriten-0.1.0.tgz ../
 git checkout gh-pages
-cp ../index.yaml .
-cp ../kriten-0.1.0.tgz .
+mv ../index.yaml .
+mv ../kriten-0.1.0.tgz .
+```
+
+Commit and push
+```
 git commit -a -m "Updated Helm repo."
+git push origin gh-pages
+```
