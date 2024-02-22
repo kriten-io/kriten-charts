@@ -23,19 +23,19 @@
 
 ### Quick start
 
-To install Kriten along with local PostgreSQL and Nginx Ingress, clone this repo and run the following Helm command against target Kubernetes cluster:
+To install Kriten along with local PostgreSQL:
 ```
-$ KRITEN_HOST=<fqdn or ip to reach ingress>
-$ helm install kriten ./kriten-charts -n kriten \
---set ingress.hosts[0].host=$KRITEN_HOST \
---set ingress.hosts[0].paths[0].path="/" \
---set ingress.hosts[0].paths[0].pathType="Prefix" \
---create-namespace
+helm repo add kriten https://kriten-io.github.io/kriten-charts/
+helm repo update
+
+kubectl create namespace kriten
+helm install kriten kriten/kriten -n kriten
+
 ```
 
 For simple examples refer to the following repo: https://github.com/kriten-io/kriten-examples.
 
-Kriten's documentation can be found at that location: https://github.com/kriten-io/kriten-docs
+Kriten's documentation can be found at that location: https://kriten.io
 
 ### Helm install
 
@@ -43,11 +43,11 @@ The Chart can be installed by cloning the Helm Chart from GitHub: https://github
 
 Kriten can be installed along with local PostgreSQL database (recommended for Dev and UAT environments) or with external PostgreSQL database (recommended for production use).
 
-Kriten supports local authenticator and Microsoft AD authenticator at same time. If no Microsoft AD authenticator enabled and configured, only local authentication will take place. Note: that Microsoft AD integration is not available in Community Edition of Kriten.
+Kriten supports local authenticator and Microsoft AD authenticator at same time. If no Microsoft AD authenticator enabled and configured, only local authentication will take place.
 
 Helm install with values.yaml modified for target configuration:
 
-`$ helm install kriten-community ./kriten-charts -n kriten-community --create-namespace`
+`$ helm install kriten ./kriten-charts -n kriten --create-namespace`
 
 
 ### Helm Chart Parameters
