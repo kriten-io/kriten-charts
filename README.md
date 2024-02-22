@@ -87,3 +87,22 @@ Helm install with values.yaml modified for target configuration:
 |`ingress.enabled`|Ingress configuration enabled|`true`
 |`ingress.className`|Ingress class name|`"nginx"`
 |`ingress.hosts`|Ingress hosts and paths definitions|`[]`
+
+
+### Update the Helm repo
+
+Clone this repo.
+
+Create the index.yaml file
+```helm repo index --url https://kriten-io.github.io/kriten-charts/ .```
+
+Create the kriten-0.1.0.tgz file:
+```helm package kriten-charts```
+
+Copy index.yaml and kriten-0.1.0.tgz to the gh-pages branch
+```
+cd kriten-charts
+git checkout gh-pages
+cp ../index.yaml .
+cp ../kriten-0.1.0.tgz .
+git commit -a -m "Updated Helm repo."
