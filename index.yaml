@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   kriten:
   - apiVersion: v2
-    appVersion: 1.16.0
+    appVersion: 4.0.1
     created: "2024-02-21T15:32:40.87254216Z"
     dependencies:
     - condition: postgresql.install
