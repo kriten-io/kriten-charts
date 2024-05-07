@@ -88,6 +88,28 @@ ldap:
 
 frontend:
   enabled: false
+  replicaCount: 1
+  # This is how the frontend will be able to communicate with kriten
+  backendAddress: example.com
+  image:
+    repository: evolvere/kriten-frontend
+    tag: "0.2"
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 80
+  ingress:
+    # Ingress resource for accessing kriten frontend
+    # Note: this is defferent from kriten ingress
+    enabled: false
+    className: "nginx"
+    annotation: {}
+    hosts:
+      - host: frontend.example.com
+        paths:
+          - path: /
+            pathType: Prefix
+    tls: []
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
