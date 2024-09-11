@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: evolvere/kriten
+  repository: kubecodeio/kriten
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
@@ -92,7 +92,7 @@ frontend:
   # This is how the frontend will be able to communicate with kriten
   backendAddress: example.com
   image:
-    repository: evolvere/kriten-frontend
+    repository: kubecodeio/kriten-frontend
     tag: "0.2"
     pullPolicy: IfNotPresent
   service:
