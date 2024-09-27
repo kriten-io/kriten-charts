@@ -3,6 +3,21 @@ entries:
   kriten:
   - apiVersion: v2
     appVersion: 4.0.1
+    created: "2024-09-27T14:42:01.008343126Z"
+    dependencies:
+    - condition: postgresql.install
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.12.7
+    description: A Helm chart for Kubernetes
+    digest: f0c82a76f70fb4876d38fd820086d19fa2cad67188a8055990c6ef70868bc847
+    name: kriten
+    type: application
+    urls:
+    - https://github.com/kriten-io/kriten-charts/releases/download/kriten-0.2.2/kriten-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 4.0.1
     created: "2024-05-07T13:21:36.976083957Z"
     dependencies:
     - condition: postgresql.install
@@ -88,4 +103,4 @@ entries:
     urls:
     - https://kriten-io.github.io/kriten-charts/charts/postgresql-12.12.7.tgz
     version: 12.12.7
-generated: "2024-05-07T13:21:36.976102893Z"
+generated: "2024-09-27T14:42:01.008357422Z"
