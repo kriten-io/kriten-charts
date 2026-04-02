@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "kriten-nats.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "kriten-nats.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "kriten-nats.selectorLabels" . | nindent 6 }}
+      app: {{ include "kriten-nats.fullname" . }}
+  template:
+    metadata:
+      labels:
+        {{- include "kriten-nats.selectorLabels" . | nindent 8 }}
+        app: {{ include "kriten-nats.fullname" . }}
+    spec:
+      containers:
+        - name: {{ include "kriten-nats.fullname" . }}-responder
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: "NATS_HOST"
+              value: {{ .Values.nats_host }}
+            - name: "NATS_PORT"
+              value: {{ .Values.nats_port | quote }}
+            - name: "KRITEN_URL"
+              value: {{ .Values.kriten_url }}
+            - name: "KRITEN_API_TOKEN"
+              value: {{ .Values.kriten_api_token }}
+
