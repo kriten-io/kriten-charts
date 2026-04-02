@@ -9,6 +9,8 @@ jobs:
   release:
     permissions:
       contents: write
+      pull-requests: write
+      repository-projects: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,12 +29,10 @@ jobs:
       - name: Add repo dependencies
         run: |
           helm repo add bitnami https://charts.bitnami.com/bitnami
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
           charts_dir: charts
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
