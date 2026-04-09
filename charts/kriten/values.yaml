@@ -12,7 +12,7 @@ image:
 
 # imagePullSecrets: ["name": "dockerhub"]
 name: "kriten"
-jobsTTL: 3600
+jobsTTL: 86400
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -92,7 +92,7 @@ frontend:
   # This is how the frontend will be able to communicate with kriten
   backendAddress: example.com
   image:
-    repository: kubecodeio/kriten-frontend
+    repository: kubecodeio/kriten-web
     tag: "latest"
     pullPolicy: IfNotPresent
   service:
