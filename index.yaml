@@ -1,7 +1,21 @@
-
 apiVersion: v1
 entries:
   kriten:
+  - apiVersion: v2
+    appVersion: 4.0.1
+    created: "2026-04-10T09:20:20.89576985Z"
+    dependencies:
+    - condition: postgresql.install
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.12.7
+    description: A Helm chart for Kubernetes
+    digest: 94b3d961d261e8a133d2c49e6b9707357ea69acb13ab04a335dcfb984c86a7d8
+    name: kriten
+    type: application
+    urls:
+    - https://github.com/kriten-io/kriten-charts/releases/download/kriten-0.2.3/kriten-0.2.3.tgz
+    version: 0.2.3
   - apiVersion: v2
     appVersion: 4.0.1
     created: "2024-09-27T14:42:01.008343126Z"
@@ -62,6 +76,17 @@ entries:
     urls:
     - https://kriten-io.github.io/kriten-charts/kriten-0.1.0.tgz
     version: 0.1.0
+  kriten-nats:
+  - apiVersion: v2
+    appVersion: "0.2"
+    created: "2026-04-02T16:23:38.660272+01:00"
+    description: A NATS responder for Kriten.
+    digest: 595139511cd9c5273cbe326d6f9a9b2dee9efb5e6e27499cef7a893c8a6a4e98
+    name: kriten-nats
+    type: application
+    urls:
+    - https://kriten-io.github.io/kriten-charts/kriten-nats-0.1.0.tgz
+    version: 0.1.0
   postgresql:
   - annotations:
       category: Database
@@ -104,15 +129,4 @@ entries:
     urls:
     - https://kriten-io.github.io/kriten-charts/charts/postgresql-12.12.7.tgz
     version: 12.12.7
-  kriten-nats:
-  - apiVersion: v2
-    appVersion: "0.2"
-    created: "2026-04-02T16:23:38.660272+01:00"
-    description: A NATS responder for Kriten.
-    digest: 595139511cd9c5273cbe326d6f9a9b2dee9efb5e6e27499cef7a893c8a6a4e98
-    name: kriten-nats
-    type: application
-    urls:
-    - https://kriten-io.github.io/kriten-charts/kriten-nats-0.1.0.tgz
-    version: 0.1.0
-generated: "2026-04-02T16:23:38.658809+01:00"
+generated: "2026-04-10T09:20:20.895797582Z"
