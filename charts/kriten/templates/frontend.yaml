@@ -29,7 +29,7 @@ spec:
         ports:
           - containerPort: 80
         env:
-          - name: VITE_KRITEN_BACKEND
+          - name: KRITEN_BACKEND_ADDRESS
             value: "http://{{ .Values.frontend.backendAddress }}"
       {{- with .Values.nodeSelector }}
       nodeSelector:
