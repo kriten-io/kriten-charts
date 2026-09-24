@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: kubecodeio/kriten
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
@@ -87,14 +87,14 @@ ldap:
   enabled: false
 
 frontend:
-  enabled: false
+  enabled: true
   replicaCount: 1
   # This is how the frontend will be able to communicate with kriten
   backendAddress: example.com
   image:
-    repository: kubecodeio/kriten-web
+    repository: kubecodeio/kriten-ui
     tag: "latest"
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
   service:
     type: ClusterIP
     port: 80
