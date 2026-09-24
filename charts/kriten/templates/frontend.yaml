@@ -29,8 +29,8 @@ spec:
         ports:
           - containerPort: 80
         env:
-          - name: KRITEN_BACKEND_ADDRESS
-            value: "http://{{ .Values.frontend.backendAddress }}"
+          - name: API_URL
+            value: "http://{{ .Values.frontend.backendAddress }}/api/v1"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
